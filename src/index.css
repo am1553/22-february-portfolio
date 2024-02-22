@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scrollbar-color: #ffffff50 #1e1e1e00;
+  scrollbar-width: thin;
+}
+
+/* For WebKit based browsers */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  scrollbar-color: #1e1e1e;
+  background-color: #1e1e1e00;
+}
+
+/* For Internet Explorer */
+/* The following properties only work in IE 10+ */
+*::-ms-scrollbar {
+  width: 10px;
+  height: 10px;
+  background-color: #1e1e1e00;
+}
+
+*::-ms-scrollbar-thumb {
+  background-color: #1e1e1e;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #03001e;
+  position: relative;
+  color: #fff;
+}
+
+li {
+  list-style: none;
+}

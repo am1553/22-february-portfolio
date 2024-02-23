@@ -20,7 +20,7 @@ export default {
     },
 
     fontFamily: {
-      sans: ["Plus Jakarta Sans", "sans-serif"],
+      sans: ["Inter", "sans-serif"],
     },
   },
 

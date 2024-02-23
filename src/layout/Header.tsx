@@ -40,7 +40,7 @@ function Header() {
     setIsMenu(false);
   };
   return (
-    <header className="h-16 w-full flex items-center px-4 bg-white text-dark-blue z-50">
+    <header className="h-16 w-full flex items-center px-4 bg-white text-dark-blue z-50 fixed">
       <div className="flex-1"></div>
       <button onClick={handleMenu}>{isMenu ? <Close /> : <Menu />}</button>
 

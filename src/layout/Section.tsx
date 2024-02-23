@@ -8,7 +8,11 @@ function Section({
   children: JSX.Element;
 }) {
   return (
-    <section title={title} id={id} className="min-h-screen border-b">
+    <section
+      title={title}
+      id={id}
+      className="min-h-screen border-b max-w-7xl mx-auto px-8"
+    >
       {children}
     </section>
   );

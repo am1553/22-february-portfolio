@@ -121,7 +121,7 @@ function Home() {
             <h1 className="text-4xl font-black leading-loose tracking-wide">
               Web Developer
             </h1>
-            <p className="leading-loose opacity-50 tracking-wide">
+            <p className="leading-loose opacity-50 tracking-wide max-w-96 mx-auto px-4">
               Passionate about devising solutions for intricate challenges and
               crafting visually captivating web applications for users.
             </p>

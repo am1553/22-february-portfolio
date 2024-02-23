@@ -1,6 +1,5 @@
 import { useRef } from "react";
 import { Section } from "../layout";
-import { ChevronRight } from "@mui/icons-material";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
@@ -50,7 +49,7 @@ function Home() {
           start: "top 30%",
           end: "bottom 50%",
           scrub: true,
-          pin: true,
+          markers: true,
         },
       });
       gsap.from(titleContainer1.current, {

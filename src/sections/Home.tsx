@@ -133,10 +133,10 @@ function Home() {
             </h1>
           </div>
 
-          <button className="border fixed bottom-40 px-6 py-2 rounded-md flex items-center gap-4">
+          {/* <button className="border fixed bottom-40 px-6 py-2 rounded-md flex items-center gap-4">
             <span>Connect on LinkedIn</span>
             <ChevronRight />
-          </button>
+          </button> */}
         </div>
       </div>
     </Section>

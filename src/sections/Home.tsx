@@ -1,11 +1,9 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { Section } from "../layout";
 import { ChevronRight } from "@mui/icons-material";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
-import { getSpeedDialActionUtilityClass } from "@mui/material";
-
 function Home() {
   const titleContainer1 = useRef<HTMLDivElement>(null);
   const titleContainer2 = useRef<HTMLDivElement>(null);
@@ -135,10 +133,10 @@ function Home() {
             </h1>
           </div>
 
-          {/* <button className="border fixed bottom-0 px-6 py-2 rounded-md flex items-center gap-4">
+          <button className="border fixed bottom-0 px-6 py-2 rounded-md flex items-center gap-4">
             <span>Connect on LinkedIn</span>
             <ChevronRight />
-          </button> */}
+          </button>
         </div>
       </div>
     </Section>

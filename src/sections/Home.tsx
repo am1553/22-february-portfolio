@@ -118,22 +118,22 @@ function Home() {
             id="title"
             ref={titleContainer1}
           >
-            <h1 className="text-4xl font-semibold leading-loose">
+            <h1 className="text-4xl font-black leading-loose tracking-wide">
               Web Developer
             </h1>
-            <p className="leading-loose opacity-50 tracking-normal">
+            <p className="leading-loose opacity-50 tracking-wide">
               Passionate about devising solutions for intricate challenges and
               crafting visually captivating web applications for users.
             </p>
           </div>
 
           <div className="flex flex-col gap-2 h-fit" ref={titleContainer2}>
-            <h1 className="text-4xl font-black leading-loose">
+            <h1 className="text-4xl font-black leading-loose tracking-wide">
               3 Years of Frontend Experience
             </h1>
           </div>
 
-          <button className="border fixed bottom-0 px-6 py-2 rounded-md flex items-center gap-4">
+          <button className="border fixed bottom-40 px-6 py-2 rounded-md flex items-center gap-4">
             <span>Connect on LinkedIn</span>
             <ChevronRight />
           </button>

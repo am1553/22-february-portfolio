@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { Close, Menu } from "@mui/icons-material";
+import { Close, GitHub, LinkedIn, Menu } from "@mui/icons-material";
 import { useDisableBodyScroll, useOnClickOutside } from "../hooks";
 
 const NAV = [
@@ -19,11 +19,7 @@ function SectionLink({
   title: string;
 }) {
   return (
-    <a
-      href={href}
-      onClick={onClick}
-      className="text-xl font-semibold capitalize"
-    >
+    <a href={href} onClick={onClick} className="text-xl capitalize">
       {title}
     </a>
   );
@@ -40,23 +36,45 @@ function Header() {
     setIsMenu(false);
   };
   return (
-    <header className="h-16 w-full flex items-center px-4 bg-white text-dark-blue z-50 fixed">
-      <div className="flex-1"></div>
-      <button onClick={handleMenu}>{isMenu ? <Close /> : <Menu />}</button>
-
-      {isMenu ? (
-        <div className="" ref={navPanelRef}>
-          <nav className="bg-white text-dark-blue absolute inset-0 top-16 h-fit p-4 flex flex-col">
-            {NAV.map((navLink) => (
-              <SectionLink
-                href={navLink.href}
-                title={navLink.title}
-                onClick={handleNavClick}
-              />
-            ))}
-          </nav>
+    <header className="h-16 lg:h-24 w-full px-4 lg:px-20 border">
+      <div className="flex items-center justify-center h-full w-full max-w-7xl mx-auto">
+        <div className="flex items-center justify-center gap-4 lg:gap-12">
+          <a href="">
+            <LinkedIn style={{ height: "30px", width: "30px" }} />
+          </a>
+          <a href="">
+            <GitHub style={{ height: "30px", width: "30px" }} />
+          </a>
         </div>
-      ) : null}
+        <div className="flex-1"></div>
+        <button onClick={handleMenu} className="lg:hidden">
+          {isMenu ? <Close /> : <Menu />}
+        </button>
+        <nav className="max-lg:hidden flex gap-12">
+          {NAV.map((navLink, i) => (
+            <SectionLink
+              key={i}
+              href={navLink.href}
+              title={navLink.title}
+              onClick={handleNavClick}
+            />
+          ))}
+        </nav>
+        {isMenu ? (
+          <div className="" ref={navPanelRef}>
+            <nav className="bg-white absolute inset-0 top-16 h-fit p-4 flex flex-col lg:hidden">
+              {NAV.map((navLink, i) => (
+                <SectionLink
+                  key={i}
+                  href={navLink.href}
+                  title={navLink.title}
+                  onClick={handleNavClick}
+                />
+              ))}
+            </nav>
+          </div>
+        ) : null}
+      </div>
     </header>
   );
 }

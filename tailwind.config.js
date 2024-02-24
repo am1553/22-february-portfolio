@@ -4,15 +4,17 @@ export default {
   theme: {
     extend: {
       fontSize: {
+        xxl: "36px",
         xl: "24px",
         l: "18px",
-        m: "15px",
+        m: "16px",
         s: "12px",
+        special: ["14px", { letterSpacing: "1em", fontWeight: 600 }],
       },
       colors: {
-        "dark-blue": "#1E1E1E",
-        purple: "#7303C0",
-        pink: "#EC38BC",
+        "light-blue": "#12C2E9",
+        purple: "#C471ED",
+        red: "#F64F59",
         "desaturated-white": "#FDEFF9",
         white: "#ffffff",
         black: "#000000",

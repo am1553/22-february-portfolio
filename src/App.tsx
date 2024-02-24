@@ -1,3 +1,4 @@
+import HeroImage from "./components/HeroImage";
 import { Header, Main } from "./layout";
 import { Experience, Home, Projects } from "./sections";
 

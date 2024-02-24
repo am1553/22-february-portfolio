@@ -40,9 +40,9 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #03001e;
+  background-color: white;
   position: relative;
-  color: #fff;
+  color: black;
 }
 
 li {

@@ -61,8 +61,11 @@ function Header() {
           ))}
         </nav>
         {isMenu ? (
-          <div className="" ref={navPanelRef}>
-            <nav className="bg-white absolute inset-0 top-16 h-fit p-4 flex flex-col lg:hidden">
+          <div
+            className="bg-white absolute inset-0 top-16 h-fit z-10 p-4 lg:hidden"
+            ref={navPanelRef}
+          >
+            <nav className="flex flex-col">
               {NAV.map((navLink, i) => (
                 <SectionLink
                   key={i}

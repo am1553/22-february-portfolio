@@ -1,5 +1,18 @@
 import { Section } from "../layout";
-
+import {
+  ExpressIcon,
+  HTMLIcon,
+  TypeScriptIcon,
+  JavaScriptIcon,
+  CPPIcon,
+  SCSSIcon,
+  NodeJSIcon,
+  CSSIcon,
+  JavaIcon,
+  PostgresSQLIcon,
+  MongoDBIcon,
+  ReactIcon,
+} from "../assets";
 function Intro() {
   return (
     <div className="flex flex-col gap-2 md:gap-4 lg:gap-6 my-64">
@@ -20,8 +33,46 @@ function Home() {
       <>
         <div className="w-full flex flex-col gap-36 md:gap-48">
           <Intro />
-
           <div className="flex flex-col gap-32">
+            <div className="grid grid-rows-6 grid-cols-4">
+              <div className="col-start-1 row-start-1 bg-white border w-12 h-12 rounded-full p-1 ">
+                <img src={HTMLIcon} alt="" className="rounded-full" />
+              </div>
+
+              <div className="col-start-1 row-start-3 bg-white border w-12 h-12 rounded-full p-1 ">
+                <img src={ExpressIcon} alt="" className="rounded-full" />
+              </div>
+              <div className="col-start-1 row-start-5 bg-white border w-12 h-12 rounded-full p-1 ">
+                <img src={TypeScriptIcon} alt="" className="rounded-full" />
+              </div>
+              <div className="col-start-2 row-start-2 bg-white border w-12 h-12 rounded-full p-1 ">
+                <img src={JavaScriptIcon} alt="" className="rounded-full" />
+              </div>
+              <div className="col-start-2 row-start-4 bg-white border w-12 h-12 rounded-full p-1 ">
+                <img src={CPPIcon} alt="" className="rounded-full" />
+              </div>
+              <div className="col-start-2 row-start-6 bg-white border w-12 h-12 rounded-full p-1 ">
+                <img src={SCSSIcon} alt="" className="rounded-full" />
+              </div>
+              <div className="col-start-3 row-start-1 bg-white border w-12 h-12 rounded-full p-1 ">
+                <img src={NodeJSIcon} alt="" className="rounded-full" />
+              </div>
+              <div className="col-start-3 row-start-3 bg-white border w-12 h-12 rounded-full p-1 ">
+                <img src={CSSIcon} alt="" className="rounded-full" />
+              </div>
+              <div className="col-start-3 row-start-5 bg-white border w-12 h-12 rounded-full p-1 ">
+                <img src={JavaIcon} alt="" className="rounded-full" />
+              </div>
+              <div className="col-start-4 row-start-2 bg-white border w-12 h-12 rounded-full p-1 ">
+                <img src={PostgresSQLIcon} alt="" className="rounded-full" />
+              </div>
+              <div className="col-start-4 row-start-4 bg-white border w-12 h-12 rounded-full p-1 ">
+                <img src={MongoDBIcon} alt="" className="rounded-full" />
+              </div>
+              <div className="col-start-4 row-start-6 bg-white border w-12 h-12 rounded-full p-1 ">
+                <img src={ReactIcon} alt="" className="rounded-full" />
+              </div>
+            </div>
             <div className="flex flex-col gap-6 md:gap-8 lg:gap-10 xl:gap-12">
               <span className="text-special uppercase opacity-50">
                 frontend

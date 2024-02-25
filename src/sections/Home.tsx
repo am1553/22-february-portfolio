@@ -46,8 +46,10 @@ function Home() {
           trigger: iconsContainer.current,
           pin: true,
           start: "top top",
+          end: "bottom bottom",
           endTrigger: contentRef.current,
           scrub: true,
+          markers: true,
         },
       });
 
@@ -56,19 +58,10 @@ function Home() {
         scrollTrigger: {
           trigger: frontendContainer.current,
           start: "top center",
+          end: "bottom bottom",
           pin: true,
           scrub: true,
           endTrigger: contentRef.current,
-        },
-      });
-      gsap.to(frontendContainer.current, {
-        backgroundColor: "#C471ED",
-        scrollTrigger: {
-          trigger: frontendContainer.current,
-          start: "top center",
-          scrub: true,
-          endTrigger: contentRef.current,
-          markers: true,
         },
       });
 
@@ -86,6 +79,7 @@ function Home() {
         scrollTrigger: {
           trigger: backendContainer.current,
           start: "top center",
+          end: "bottom bottom",
           pin: true,
           scrub: true,
           endTrigger: contentRef.current,
@@ -104,6 +98,7 @@ function Home() {
         scrollTrigger: {
           trigger: learningContainer.current,
           start: "top center",
+          end: "bottom bottom",
           pin: true,
           scrub: true,
           endTrigger: contentRef.current,

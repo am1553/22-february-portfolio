@@ -13,6 +13,10 @@ import {
   MongoDBIcon,
   ReactIcon,
 } from "../assets";
+import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
 function Intro() {
   return (
     <div className="flex flex-col gap-2 md:gap-4 lg:gap-6 my-64">
@@ -28,13 +32,103 @@ function Intro() {
 }
 
 function Home() {
+  const contentRef = useRef<HTMLDivElement>(null);
+  const iconsContainer = useRef<HTMLDivElement>(null);
+  const frontendContainer = useRef<HTMLDivElement>(null);
+  const backendContainer = useRef<HTMLDivElement>(null);
+  const learningContainer = useRef<HTMLDivElement>(null);
+  useGSAP(
+    () => {
+      gsap.registerPlugin(ScrollTrigger);
+      if (!contentRef.current) return;
+      gsap.from(iconsContainer.current, {
+        scrollTrigger: {
+          trigger: iconsContainer.current,
+          pin: true,
+          start: "top top",
+          endTrigger: contentRef.current,
+          scrub: true,
+        },
+      });
+
+      gsap.from(frontendContainer.current, {
+        zIndex: 10,
+        scrollTrigger: {
+          trigger: frontendContainer.current,
+          start: "top center",
+          pin: true,
+          scrub: true,
+          endTrigger: contentRef.current,
+        },
+      });
+      gsap.to(frontendContainer.current, {
+        backgroundColor: "#C471ED",
+        scrollTrigger: {
+          trigger: frontendContainer.current,
+          start: "top center",
+          scrub: true,
+          endTrigger: contentRef.current,
+          markers: true,
+        },
+      });
+
+      gsap.to(frontendContainer.current, {
+        zIndex: 0,
+        scrollTrigger: {
+          trigger: frontendContainer.current,
+          end: "bottom center",
+          scrub: true,
+        },
+      });
+
+      gsap.from(backendContainer.current, {
+        zIndex: 20,
+        scrollTrigger: {
+          trigger: backendContainer.current,
+          start: "top center",
+          pin: true,
+          scrub: true,
+          endTrigger: contentRef.current,
+        },
+      });
+
+      gsap.to(backendContainer.current, {
+        zIndex: 0,
+        scrollTrigger: {
+          trigger: backendContainer.current,
+          end: "bottom center",
+        },
+      });
+      gsap.from(learningContainer.current, {
+        zIndex: 20,
+        scrollTrigger: {
+          trigger: learningContainer.current,
+          start: "top center",
+          pin: true,
+          scrub: true,
+          endTrigger: contentRef.current,
+        },
+      });
+
+      gsap.to(learningContainer.current, {
+        zIndex: 0,
+        scrollTrigger: {
+          trigger: learningContainer.current,
+          end: "bottom center",
+        },
+      });
+    },
+
+    { scope: contentRef, dependencies: [contentRef.current] }
+  );
+
   return (
     <Section id="home" title="home">
       <>
         <div className="w-full flex flex-col gap-36 md:gap-48">
           <Intro />
-          <div className="flex flex-col gap-32">
-            <div className="grid grid-rows-6 grid-cols-4">
+          <div className="flex flex-col gap-32" ref={contentRef}>
+            <div className="grid grid-rows-6 grid-cols-4" ref={iconsContainer}>
               <div className="col-start-1 row-start-1 bg-white border w-12 h-12 rounded-full p-1 ">
                 <img src={HTMLIcon} alt="" className="rounded-full" />
               </div>
@@ -73,12 +167,15 @@ function Home() {
                 <img src={ReactIcon} alt="" className="rounded-full" />
               </div>
             </div>
-            <div className="flex flex-col gap-6 md:gap-8 lg:gap-10 xl:gap-12">
+            <div
+              className="flex flex-col gap-6 md:gap-8 lg:gap-10 xl:gap-12 bg-white relative z-10 py-6"
+              ref={frontendContainer}
+            >
               <span className="text-special uppercase opacity-50">
                 frontend
               </span>
               <div className="">
-                <span className="text-2xl font-bold md:text-4xl lg:text-6xl">
+                <span className="text-2xl font-bold md:text-4xl lg:text-6xl ">
                   Transforming designs into
                   <span className="opacity-50"> pixel perfect</span> web
                   application.
@@ -93,7 +190,10 @@ function Home() {
               </div>
             </div>
 
-            <div className="flex flex-col gap-6 md:gap-8 lg:gap-10 xl:gap-12">
+            <div
+              className="flex flex-col gap-6 md:gap-8 lg:gap-10 xl:gap-12 relative z-20 bg-white py-6 "
+              ref={backendContainer}
+            >
               <span className="text-special uppercase opacity-50">backend</span>
               <div className="">
                 <span className="text-2xl font-bold md:text-4xl lg:text-6xl">
@@ -109,12 +209,15 @@ function Home() {
               </div>
             </div>
 
-            <div className="flex flex-col gap-6 md:gap-8 lg:gap-10 xl:gap-12">
+            <div
+              className="flex flex-col gap-6 md:gap-8 lg:gap-10 xl:gap-12 relative z-40 bg-white py-6"
+              ref={learningContainer}
+            >
               <span className="text-special uppercase opacity-50">
                 learning
               </span>
               <div className="">
-                <span className="text-2xl font-bold md:text-4xl lg:text-6xl">
+                <span className="text-2xl font-bold md:text-4xl lg:text-6xl relative z-30 bg-white">
                   Because it's <span className="opacity-50"> fun</span>
                 </span>
               </div>

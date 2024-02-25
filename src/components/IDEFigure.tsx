@@ -1,5 +1,3 @@
-import React from "react";
-
 function WindowOptions() {
   return (
     <div className="flex gap-2">

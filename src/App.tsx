@@ -1,6 +1,5 @@
-import IDEFigure from "./components/IDEFigure";
 import { Header, Main } from "./layout";
-import { Experience, Home, Projects } from "./sections";
+import { Home } from "./sections";
 
 function App() {
   return (

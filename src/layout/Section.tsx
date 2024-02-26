@@ -11,7 +11,7 @@ function Section({
     <section
       title={title}
       id={id}
-      className="min-h-screen border-b max-w-7xl mx-auto px-8 overflow-x-hidden"
+      className="min-h-screen max-w-screen-2xl mx-auto px-8 overflow-x-hidden"
     >
       {children}
     </section>

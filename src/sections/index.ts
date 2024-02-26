@@ -1,4 +1,4 @@
-import Home from "./Home";
+import Home from "./home";
 import Projects from "./Projects";
 import Experience from "./Experience";
 

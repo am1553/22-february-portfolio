@@ -37,7 +37,7 @@ function Header() {
   };
   return (
     <header className="h-16 lg:h-24 w-full px-4 lg:px-20 border">
-      <div className="flex items-center justify-center h-full w-full max-w-7xl mx-auto">
+      <div className="flex items-center justify-center h-full w-full max-w-screen-2xl mx-auto">
         <div className="flex items-center justify-center gap-4 lg:gap-12">
           <a href="">
             <LinkedIn style={{ height: "30px", width: "30px" }} />

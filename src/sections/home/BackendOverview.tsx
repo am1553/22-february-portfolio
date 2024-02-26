@@ -33,6 +33,29 @@ function BackendOverview() {
     { scope: contentContainer, dependencies: [backendIcons, contentContainer] }
   );
 
+  useGSAP(
+    () => {
+      if (windowWidth < 1024) return;
+      gsap.registerPlugin(ScrollTrigger);
+
+      backendIcons.forEach((icon) => {
+        gsap.from(icon, {
+          opacity: 0,
+          scaleX: 0.5,
+          scaleY: 0.5,
+          scrollTrigger: {
+            trigger: backendContainer.current,
+            start: "top 75%",
+            end: "bottom center",
+            endTrigger: backendContainer.current,
+            scrub: true,
+          },
+        });
+      });
+    },
+    { scope: contentContainer, dependencies: [backendIcons, contentContainer] }
+  );
+
   return (
     <div
       className="w-full flex flex-col gap-6 md:gap-8 lg:gap-10 xl:gap-12  lg:col-start-1 row-start-2"

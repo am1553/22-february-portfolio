@@ -34,7 +34,7 @@ function IconsContainer() {
         scrollTrigger: {
           trigger: iconsContainer.current,
           start: "top top",
-          end: "bottom 85%",
+          end: "bottom center",
           pin: true,
           endTrigger: contentContainer,
         },
@@ -62,7 +62,7 @@ function IconsContainer() {
   );
   return (
     <div
-      className="grid grid-rows-6 grid-cols-4 lg:grid-cols-3 lg:grid-rows-8 w-full lg:col-start-2 lg:row-span-3 z-10 py-10 bg-bg-dark-blue"
+      className="grid grid-rows-6 grid-cols-4 lg:grid-cols-3 lg:grid-rows-8 w-full lg:col-start-2 lg:row-span-3 z-10 py-10 bg-bg-dark-blue mx-auto place-items-center"
       ref={iconsContainer}
     >
       <div className="col-start-1 row-start-1 bg-transparent border w-12 h-12 rounded-full p-1 frontend_overview_icon">

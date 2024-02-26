@@ -40,13 +40,12 @@ function FrontendOverview() {
       ref={frontendContainer}
     >
       <span className="text-special uppercase opacity-50">frontend</span>
-      <div className="">
-        <span className="text-2xl font-bold md:text-4xl lg:text-6xl ">
-          Transforming designs into
-          <span className="opacity-50"> pixel perfect</span> web application.
-        </span>
+      <div className="text-2xl font-bold md:text-4xl lg:text-6xl">
+        <span className="opacity-70">Transforming designs into</span>
+        <span className="text-light-blue"> pixel perfect </span>
+        <span className="opacity-70">web application</span>
       </div>
-      <div className="grid grid-cols-3 gap-2 opacity-50">
+      <div className="grid grid-cols-3 gap-2 opacity-70">
         <span>HTML5</span>
         <span>CSS3</span>
         <span>JavaScript</span>

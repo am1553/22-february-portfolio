@@ -1,6 +1,8 @@
+import { ConnectOnLinkedInBtn } from "../../components/buttons";
+
 function Intro() {
   return (
-    <div className="flex flex-col gap-2 md:gap-4 lg:gapy-6 my-64">
+    <div className="flex flex-col gap-2 md:gap-4 lg:gap-6 my-64">
       <h1 className="font-bold text-xxl md:text-[64px] lg:text-[96px] text-left">
         Web Developer
       </h1>
@@ -8,6 +10,9 @@ function Intro() {
         Passionate about devising solutions for intricate challenges and
         crafting visually captivating web applications for users.
       </p>
+      <div className="">
+        <ConnectOnLinkedInBtn />
+      </div>
     </div>
   );
 }

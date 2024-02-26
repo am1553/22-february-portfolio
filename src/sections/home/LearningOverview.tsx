@@ -39,12 +39,12 @@ function LearningOverview() {
       ref={learningContainer}
     >
       <span className="text-special uppercase opacity-50">learning</span>
-      <div className="">
-        <span className="text-2xl font-bold md:text-4xl lg:text-6xl relative">
-          Because it's <span className="opacity-50"> fun</span>
-        </span>
+      <div className="text-2xl font-bold md:text-4xl lg:text-6xl">
+        <span className="opacity-70">Because it's</span>
+        <span className="text-red"> fun</span>
       </div>
-      <div className="grid grid-cols-3 gap-2 opacity-50">
+
+      <div className="grid grid-cols-3 gap-2 opacity-70">
         <span>Java</span>
         <span>C++</span>
         <span>All of Above</span>

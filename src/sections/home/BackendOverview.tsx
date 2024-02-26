@@ -40,13 +40,14 @@ function BackendOverview() {
       ref={backendContainer}
     >
       <span className="text-special uppercase opacity-50">backend</span>
-      <div className="">
-        <span className="text-2xl font-bold md:text-4xl lg:text-6xl">
-          Building <span className="opacity-50"> RESTful APIs</span> that
-          communicate with relational or non-relational database.
+      <div className="text-2xl font-bold md:text-4xl lg:text-6xl">
+        <span className="opacity-70">Building</span>
+        <span className="text-purple"> RESTful APIs </span>
+        <span className="opacity-70">
+          that communicate with relational or non-relational database
         </span>
       </div>
-      <div className="grid grid-cols-3 gap-2 opacity-50">
+      <div className="grid grid-cols-3 gap-2 opacity-70">
         <span>Node.js</span>
         <span>Express.js</span>
         <span>PostgresSQL</span>

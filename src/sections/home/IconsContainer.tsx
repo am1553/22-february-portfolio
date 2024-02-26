@@ -34,7 +34,7 @@ function IconsContainer() {
         scrollTrigger: {
           trigger: iconsContainer.current,
           start: "top top",
-          end: "bottom 80%",
+          end: "bottom 85%",
           pin: true,
           endTrigger: contentContainer,
         },

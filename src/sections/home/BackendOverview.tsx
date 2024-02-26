@@ -7,6 +7,7 @@ function BackendOverview() {
 
   const contentContainer = document.getElementById("content")!;
   const backendIcons = document.querySelectorAll(".backend_overview_icon");
+  const frontendIcons = document.querySelectorAll(".frontend_overview_icon");
   const windowWidth = window.innerWidth;
 
   useGSAP(
@@ -31,6 +32,18 @@ function BackendOverview() {
       backendIcons.forEach((icon) => {
         gsap.to(icon, {
           border: "2px solid #C471ED",
+          scrollTrigger: {
+            trigger: backendContainer.current,
+            start: "top bottom",
+            end: "bottom bottom",
+            endTrigger: backendContainer.current,
+            scrub: true,
+          },
+        });
+      });
+      frontendIcons.forEach((icon) => {
+        gsap.to(icon, {
+          border: "1px solid #ffffff50",
           scrollTrigger: {
             trigger: backendContainer.current,
             start: "top bottom",

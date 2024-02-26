@@ -65,92 +65,47 @@ function IconsContainer() {
       className="grid grid-rows-6 grid-cols-4 lg:grid-cols-3 lg:grid-rows-8 w-full lg:col-start-2 lg:row-span-3 z-10 py-10 bg-bg-dark-blue"
       ref={iconsContainer}
     >
-      <div className="col-start-1 row-start-1 bg-transparent border w-12 h-12 rounded-full p-1 ">
+      <div className="col-start-1 row-start-1 bg-transparent border w-12 h-12 rounded-full p-1 frontend_overview_icon">
         <img
           src={HTMLIcon}
           alt=""
-          className="rounded-full frontend_overview_icon"
+          className="rounded-full "
           ref={htmlIconRef}
         />
       </div>
 
-      <div className="col-start-1 row-start-3 bg-transparent border w-12 h-12 rounded-full p-1 ">
-        <img
-          src={ExpressIcon}
-          alt=""
-          className="rounded-full backend_overview_icon"
-        />
+      <div className="col-start-1 row-start-3 bg-transparent border w-12 h-12 rounded-full p-1 backend_overview_icon">
+        <img src={ExpressIcon} alt="" className="rounded-full " />
       </div>
-      <div className="col-start-1 row-start-5 bg-transparent border w-12 h-12 rounded-full p-1 ">
-        <img
-          src={TypeScriptIcon}
-          alt=""
-          className="rounded-full frontend_overview_icon"
-        />
+      <div className="col-start-1 row-start-5 bg-transparent border w-12 h-12 rounded-full p-1 frontend_overview_icon">
+        <img src={TypeScriptIcon} alt="" className="rounded-full " />
       </div>
-      <div className="col-start-2 row-start-2 bg-transparent border w-12 h-12 rounded-full p-1 ">
-        <img
-          src={JavaScriptIcon}
-          alt=""
-          className="rounded-full frontend_overview_icon"
-        />
+      <div className="col-start-2 row-start-2 bg-transparent border w-12 h-12 rounded-full p-1 frontend_overview_icon">
+        <img src={JavaScriptIcon} alt="" className="rounded-full " />
       </div>
-      <div className="col-start-2 row-start-4 bg-transparent border w-12 h-12 rounded-full p-1 ">
-        <img
-          src={CPPIcon}
-          alt=""
-          className="rounded-full learning_overview_icon"
-        />
+      <div className="col-start-2 row-start-4 bg-transparent border w-12 h-12 rounded-full p-1 learning_overview_icon">
+        <img src={CPPIcon} alt="" className="rounded-full " />
       </div>
-      <div className="col-start-2 row-start-6 bg-transparent border w-12 h-12 rounded-full p-1 ">
-        <img
-          src={SCSSIcon}
-          alt=""
-          className="rounded-full frontend_overview_icon"
-        />
+      <div className="col-start-2 row-start-6 bg-transparent border w-12 h-12 rounded-full p-1 frontend_overview_icon">
+        <img src={SCSSIcon} alt="" className="rounded-full " />
       </div>
-      <div className="col-start-3 row-start-1 bg-transparent border w-12 h-12 rounded-full p-1 ">
-        <img
-          src={NodeJSIcon}
-          alt=""
-          className="rounded-full backend_overview_icon"
-        />
+      <div className="col-start-3 row-start-1 bg-transparent border w-12 h-12 rounded-full p-1 backend_overview_icon">
+        <img src={NodeJSIcon} alt="" className="rounded-full " />
       </div>
-      <div className="col-start-3 row-start-3 bg-transparent border w-12 h-12 rounded-full p-1 ">
-        <img
-          src={CSSIcon}
-          alt=""
-          className="rounded-full frontend_overview_icon"
-          ref={cssIconRef}
-        />
+      <div className="col-start-3 row-start-3 bg-transparent border w-12 h-12 rounded-full p-1 frontend_overview_icon">
+        <img src={CSSIcon} alt="" className="rounded-full " ref={cssIconRef} />
       </div>
-      <div className="col-start-3 row-start-5 bg-transparent border w-12 h-12 rounded-full p-1 ">
-        <img
-          src={JavaIcon}
-          alt=""
-          className="rounded-full learning_overview_icon"
-        />
+      <div className="col-start-3 row-start-5 bg-transparent border w-12 h-12 rounded-full p-1 learning_overview_icon">
+        <img src={JavaIcon} alt="" className="rounded-full " />
       </div>
-      <div className="col-start-4 row-start-2 lg:col-start-1 lg:row-start-7 bg-transparent border w-12 h-12 rounded-full p-1 ">
-        <img
-          src={PostgresSQLIcon}
-          alt=""
-          className="rounded-full backend_overview_icon"
-        />
+      <div className="col-start-4 row-start-2 lg:col-start-1 lg:row-start-7 bg-transparent border w-12 h-12 rounded-full p-1 backend_overview_icon">
+        <img src={PostgresSQLIcon} alt="" className="rounded-full " />
       </div>
-      <div className="col-start-4 row-start-4 lg:col-start-2 lg:row-start-8 bg-transparent border w-12 h-12 rounded-full p-1 ">
-        <img
-          src={MongoDBIcon}
-          alt=""
-          className="rounded-full backend_overview_icon"
-        />
+      <div className="col-start-4 row-start-4 lg:col-start-2 lg:row-start-8 bg-transparent border w-12 h-12 rounded-full p-1 backend_overview_icon">
+        <img src={MongoDBIcon} alt="" className="rounded-full " />
       </div>
-      <div className="col-start-4 row-start-6 lg:col-start-3 lg:row-start-7 bg-transparent border w-12 h-12 rounded-full p-1 flex items-center justify-center">
-        <img
-          src={ReactIcon}
-          alt=""
-          className="rounded-full frontend_overview_icon w-[95%] h-[95%]"
-        />
+      <div className="col-start-4 row-start-6 lg:col-start-3 lg:row-start-7 bg-transparent border w-12 h-12 rounded-full p-1 flex items-center justify-center frontend_overview_icon">
+        <img src={ReactIcon} alt="" className="rounded-full  w-[95%] h-[95%]" />
       </div>
     </div>
   );

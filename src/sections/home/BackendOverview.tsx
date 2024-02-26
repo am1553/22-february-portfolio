@@ -16,19 +16,9 @@ function BackendOverview() {
       gsap.registerPlugin(ScrollTrigger);
       backendIcons.forEach((icon) => {
         gsap.from(icon, {
-          opacity: 0.4,
-          scrollTrigger: {
-            trigger: backendContainer.current,
-            start: "top bottom",
-            end: "bottom bottom",
-            endTrigger: backendContainer.current,
-            scrub: true,
-            markers: true,
-          },
-        });
-        gsap.to(icon, {
-          scaleX: 1.25,
-          scaleY: 1.25,
+          opacity: 0,
+          scaleX: 0.5,
+          scaleY: 0.5,
           scrollTrigger: {
             trigger: backendContainer.current,
             start: "top bottom",

@@ -28,6 +28,18 @@ function FrontendOverview() {
           },
         });
       });
+      frontendIcons.forEach((icon) => {
+        gsap.to(icon, {
+          border: "2px solid #12C2E9",
+          scrollTrigger: {
+            trigger: frontendContainer.current,
+            start: "top bottom",
+            end: "bottom bottom",
+            endTrigger: frontendContainer.current,
+            scrub: true,
+          },
+        });
+      });
     },
 
     { scope: contentContainer, dependencies: [frontendIcons, contentContainer] }

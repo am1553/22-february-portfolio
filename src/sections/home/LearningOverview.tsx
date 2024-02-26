@@ -7,6 +7,8 @@ function LearningOverview() {
 
   const contentContainer = document.getElementById("content")!;
   const learningIcons = document.querySelectorAll(".learning_overview_icon");
+  const frontendIcons = document.querySelectorAll(".frontend_overview_icon");
+  const backendIcons = document.querySelectorAll(".backend_overview_icon");
   const windowWidth = window.innerWidth;
 
   useGSAP(
@@ -19,6 +21,42 @@ function LearningOverview() {
           opacity: 0,
           scaleX: 0.5,
           scaleY: 0.5,
+          scrollTrigger: {
+            trigger: learningContainer.current,
+            start: "top bottom",
+            end: "bottom bottom",
+            endTrigger: learningContainer.current,
+            scrub: true,
+          },
+        });
+      });
+      learningIcons.forEach((icon) => {
+        gsap.to(icon, {
+          border: "2px solid #F64F59",
+          scrollTrigger: {
+            trigger: learningContainer.current,
+            start: "top bottom",
+            end: "bottom bottom",
+            endTrigger: learningContainer.current,
+            scrub: true,
+          },
+        });
+      });
+      frontendIcons.forEach((icon) => {
+        gsap.to(icon, {
+          border: "2px solid #F64F59",
+          scrollTrigger: {
+            trigger: learningContainer.current,
+            start: "top bottom",
+            end: "bottom bottom",
+            endTrigger: learningContainer.current,
+            scrub: true,
+          },
+        });
+      });
+      backendIcons.forEach((icon) => {
+        gsap.to(icon, {
+          border: "2px solid #F64F59",
           scrollTrigger: {
             trigger: learningContainer.current,
             start: "top bottom",

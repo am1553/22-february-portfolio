@@ -21,7 +21,7 @@ function FrontendOverview() {
           scaleY: 0.5,
           scrollTrigger: {
             trigger: frontendContainer.current,
-            start: "top bottom",
+            start: "top 70%",
             end: "bottom bottom",
             endTrigger: frontendContainer.current,
             scrub: true,

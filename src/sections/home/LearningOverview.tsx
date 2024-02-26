@@ -25,7 +25,6 @@ function LearningOverview() {
             end: "bottom bottom",
             endTrigger: learningContainer.current,
             scrub: true,
-            markers: true,
           },
         });
       });

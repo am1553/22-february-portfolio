@@ -25,7 +25,6 @@ function FrontendOverview() {
             end: "bottom bottom",
             endTrigger: frontendContainer.current,
             scrub: true,
-            markers: true,
           },
         });
       });

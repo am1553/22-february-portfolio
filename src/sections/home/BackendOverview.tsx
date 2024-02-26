@@ -25,7 +25,6 @@ function BackendOverview() {
             end: "bottom bottom",
             endTrigger: backendContainer.current,
             scrub: true,
-            markers: true,
           },
         });
       });

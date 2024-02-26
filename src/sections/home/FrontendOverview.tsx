@@ -46,7 +46,7 @@ function FrontendOverview() {
           <span className="opacity-50"> pixel perfect</span> web application.
         </span>
       </div>
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-3 gap-2 opacity-50">
         <span>HTML5</span>
         <span>CSS3</span>
         <span>JavaScript</span>

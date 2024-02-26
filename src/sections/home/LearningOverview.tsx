@@ -40,13 +40,14 @@ function LearningOverview() {
     >
       <span className="text-special uppercase opacity-50">learning</span>
       <div className="">
-        <span className="text-2xl font-bold md:text-4xl lg:text-6xl relative z-30 bg-white">
+        <span className="text-2xl font-bold md:text-4xl lg:text-6xl relative">
           Because it's <span className="opacity-50"> fun</span>
         </span>
       </div>
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-3 gap-2 opacity-50">
         <span>Java</span>
         <span>C++</span>
+        <span>All of Above</span>
       </div>
     </div>
   );

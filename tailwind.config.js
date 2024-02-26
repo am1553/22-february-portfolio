@@ -18,6 +18,7 @@ export default {
         "desaturated-white": "#FDEFF9",
         white: "#ffffff",
         black: "#000000",
+        "bg-dark-blue": "#001419",
       },
     },
 

@@ -46,7 +46,7 @@ function BackendOverview() {
           communicate with relational or non-relational database.
         </span>
       </div>
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-3 gap-2 opacity-50">
         <span>Node.js</span>
         <span>Express.js</span>
         <span>PostgresSQL</span>

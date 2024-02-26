@@ -21,7 +21,7 @@ function LearningOverview() {
           scaleY: 0.5,
           scrollTrigger: {
             trigger: learningContainer.current,
-            start: "top bottom",
+            start: "top 70%",
             end: "bottom bottom",
             endTrigger: learningContainer.current,
             scrub: true,

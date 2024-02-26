@@ -21,7 +21,7 @@ function BackendOverview() {
           scaleY: 0.5,
           scrollTrigger: {
             trigger: backendContainer.current,
-            start: "top bottom",
+            start: "top 70%",
             end: "bottom bottom",
             endTrigger: backendContainer.current,
             scrub: true,

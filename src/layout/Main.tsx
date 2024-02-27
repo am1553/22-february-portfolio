@@ -1,5 +1,5 @@
 function Main({ children }: { children: JSX.Element }) {
-  return <main className="flex flex-col gap-64">{children}</main>;
+  return <main className="flex flex-col">{children}</main>;
 }
 
 export default Main;

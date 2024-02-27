@@ -21,27 +21,29 @@ import { ScrollTrigger } from "gsap/all";
 function IconsContainer() {
   const iconsContainer = useRef<HTMLDivElement>(null);
   const contentContainer = document.getElementById("content")!;
-  const htmlIconRef = useRef<HTMLImageElement>(null);
-  const cssIconRef = useRef<HTMLImageElement>(null);
-
+  const learningContainer = document.getElementById("learning_container")!;
   const windowWidth = window.innerWidth;
   useGSAP(
     () => {
-      if (windowWidth > 1023) return;
+      if (windowWidth > 1023 || !learningContainer) return;
       gsap.registerPlugin(ScrollTrigger);
 
       gsap.from(iconsContainer.current, {
         scrollTrigger: {
           trigger: iconsContainer.current,
           start: "top top",
-          end: "bottom center",
+          end: "start center",
           pin: true,
-          endTrigger: contentContainer,
+          endTrigger: learningContainer,
+          markers: true,
         },
       });
     },
 
-    { scope: contentContainer, dependencies: [contentContainer] }
+    {
+      scope: contentContainer,
+      dependencies: [contentContainer, learningContainer],
+    }
   );
   useGSAP(
     () => {
@@ -66,12 +68,7 @@ function IconsContainer() {
       ref={iconsContainer}
     >
       <div className="col-start-1 row-start-1 bg-transparent border w-12 h-12 lg:w-20 lg:h-20 rounded-full p-1 frontend_overview_icon flex items-center justify-center">
-        <img
-          src={HTMLIcon}
-          alt=""
-          className="rounded-full h-full w-full"
-          ref={htmlIconRef}
-        />
+        <img src={HTMLIcon} alt="" className="rounded-full h-full w-full" />
       </div>
 
       <div className="col-start-1 row-start-3 bg-transparent border w-12 h-12 rounded-full p-1 backend_overview_icon lg:w-20 lg:h-20 ">
@@ -101,12 +98,7 @@ function IconsContainer() {
         <img src={NodeJSIcon} alt="" className="rounded-full h-full w-full" />
       </div>
       <div className="col-start-3 row-start-3 bg-transparent border w-12 h-12 rounded-full p-1 frontend_overview_icon lg:w-20 lg:h-20 ">
-        <img
-          src={CSSIcon}
-          alt=""
-          className="rounded-full h-full w-full"
-          ref={cssIconRef}
-        />
+        <img src={CSSIcon} alt="" className="rounded-full h-full w-full" />
       </div>
       <div className="col-start-3 row-start-5 bg-transparent border w-12 h-12 rounded-full p-1 learning_overview_icon lg:w-20 lg:h-20 ">
         <img src={JavaIcon} alt="" className="rounded-full h-full w-full" />

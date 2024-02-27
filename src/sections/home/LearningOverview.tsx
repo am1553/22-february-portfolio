@@ -83,6 +83,7 @@ function LearningOverview() {
     <div
       className="w-full flex flex-col gap-6 md:gap-8 lg:gap-10 xl:gap-12  lg:col-start-1 row-start-3"
       ref={learningContainer}
+      id="learning_container"
     >
       <span className="text-special uppercase opacity-50 lg:text-specialXL">
         learning

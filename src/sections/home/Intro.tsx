@@ -3,7 +3,7 @@ import { ConnectOnLinkedInBtn } from "../../components/buttons";
 
 function Intro() {
   return (
-    <div className="flex flex-col gap-2 md:gap-4 lg:gap-6 mt-64 mb-32 lg:my-64">
+    <div className="flex flex-col gap-2 md:gap-4 lg:gap-6 mb-32 lg:my-64">
       <div className="flex flex-col gap-2 px-8">
         <h1 className="font-bold text-xxl md:text-[64px] lg:text-[96px] text-left">
           Web Developer

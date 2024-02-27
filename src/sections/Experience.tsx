@@ -3,7 +3,7 @@ import { Section } from "../layout";
 function Experience() {
   return (
     <Section id="experience" title="experience">
-      <div className="">Experience</div>
+      <div className="min-h-screen">Experience</div>
     </Section>
   );
 }

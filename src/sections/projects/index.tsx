@@ -2,6 +2,7 @@ import Screen from "../../components/mocks/Screen";
 import KanbanTask1 from "../../assets/kanban-task-1.svg";
 import KanbanMobileHeader from "../../assets/kanban-board/kanban-mobile-header.png";
 import KanbanBoardColumns from "../../assets/kanban-board/kanban-board-columns.png";
+import TaskOverview from "../../assets/kanban-board/task-overview.svg";
 import { Section } from "../../layout";
 
 import { useGSAP } from "@gsap/react";
@@ -15,18 +16,20 @@ function Projects() {
   const mobileRef = useRef<HTMLDivElement>(null);
   const task1Ref = useRef<HTMLImageElement>(null);
   const overlayRef = useRef<HTMLImageElement>(null);
+  const taskOverviewImageRef = useRef<HTMLImageElement>(null);
   const featuredProjectContainerRef = useRef<HTMLDivElement>(null);
   useGSAP(
     () => {
       if (windowWidth > 1023) return;
       gsap.registerPlugin(ScrollTrigger);
-      gsap.from(mobileRef.current, {
+      gsap.from(featuredProjectContainerRef.current, {
         scrollTrigger: {
-          trigger: mobileRef.current,
+          trigger: featuredProjectContainerRef.current,
           start: "center center",
-          end: "bottom center",
+          end: "bottom top",
           endTrigger: featuredProjectContainerRef.current,
           pin: true,
+          scrub: true,
         },
       });
       gsap.from(overlayRef.current, {
@@ -34,8 +37,8 @@ function Projects() {
         scrollTrigger: {
           trigger: overlayRef.current,
           start: "center center",
-          end: "bottom center",
-          endTrigger: featuredProjectContainerRef.current,
+          end: "center 40%",
+          scrub: true,
         },
       });
       gsap.to(mobileRef.current, {
@@ -60,6 +63,19 @@ function Projects() {
           scrub: true,
         },
       });
+      gsap.from(taskOverviewImageRef.current, {
+        display: "hidden",
+        opacity: 0,
+        scaleY: 1,
+        scaleX: 1,
+        scrollTrigger: {
+          trigger: taskOverviewImageRef.current,
+          start: "top 20%",
+          end: "bottom top",
+          endTrigger: mobileRef.current,
+        },
+        reversed: true,
+      });
     },
 
     {
@@ -75,7 +91,7 @@ function Projects() {
       className="bg-white relative section_projects py-32 text-bg-dark-blue z-50 min-h-screen"
     >
       <div className="h-full w-full" ref={featuredProjectContainerRef}>
-        <div className="h-96 w-52 mx-auto" ref={mobileRefContainer}>
+        <div className="h-96 w-52 mx-auto relative" ref={mobileRefContainer}>
           <Screen isMobile={true} className="" mobileRef={mobileRef}>
             <div className="bg-[#F4F7FD] relative">
               <img src={KanbanMobileHeader} alt="" />
@@ -96,6 +112,12 @@ function Projects() {
               ></div>
             </div>
           </Screen>
+          <div
+            ref={taskOverviewImageRef}
+            className="absolute top-20 -left-10 overflow-hidden shadow-md rounded-2xl"
+          >
+            <img src={TaskOverview} alt="" className="h-full w-full " />
+          </div>
         </div>
       </div>
     </Section>

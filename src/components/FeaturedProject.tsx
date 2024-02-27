@@ -5,7 +5,7 @@ import { KeyboardArrowDown } from "@mui/icons-material";
 
 function Content() {
   return (
-    <div className="h-96 w-full flex flex-col gap-6 relative justify-end items-start">
+    <div className="h-96 w-full flex flex-col gap-6 relative max-lg:justify-end items-start">
       <span className="text-special uppercase opacity-70 relative z-50">
         featured
       </span>
@@ -36,7 +36,7 @@ function FeaturedProject() {
        * MOBILE
        *
        * */}
-      <div className="absolute bottom-0 right-0 z-10 max-lg:hidden">
+      <div className="absolute bottom-10 right-32 z-10 max-lg:hidden">
         <Screen
           className="h-[26rem] w-52 -skew-x-2 skew-y-12 shadow-lg"
           isMobile={true}
@@ -48,9 +48,9 @@ function FeaturedProject() {
        * DESKTOP
        *
        * */}
-      <div className="absolute -top-1/4 left-1/4 lg:-top-40 lg:right-0 max-lg:w-[32rem] lg:h-[26rem] lg:w-[40rem]">
+      <div className="absolute -top-1/4 max-lg:left-1/4 lg:right-10 max-lg:w-[32rem] lg:h-[26rem] lg:w-[40rem]">
         <Screen
-          className="lg:skew-x-2 lg:-skew-y-12 shadow-lg border"
+          className="lg:skew-x-2 lg:-skew-y-12 shadow-lg"
           isMobile={false}
         >
           <img src={KanbanDesktopImage} alt="" />

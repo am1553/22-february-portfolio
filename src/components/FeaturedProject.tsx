@@ -36,11 +36,8 @@ function FeaturedProject() {
        * MOBILE
        *
        * */}
-      <div className="absolute bottom-10 right-32 z-10 max-lg:hidden">
-        <Screen
-          className="h-[26rem] w-52 -skew-x-2 skew-y-12 shadow-lg"
-          isMobile={true}
-        >
+      <div className="absolute bottom-10 right-32 z-10 max-lg:hidden h-[26rem] w-52">
+        <Screen className=" -skew-x-2 skew-y-12 shadow-lg" isMobile={true}>
           <img src={KanbanboardMobileImage} alt="" className="bg-cover" />
         </Screen>
       </div>

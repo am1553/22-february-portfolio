@@ -11,8 +11,9 @@ import { ScrollTrigger } from "gsap/all";
 import { useRef } from "react";
 
 function Projects() {
+  const projectSection = document.getElementById("projects");
   const windowWidth = window.innerWidth;
-  const mobileRefContainer = useRef<HTMLDivElement>(null);
+  const projectDescription = useRef<HTMLDivElement>(null);
   const mobileRef = useRef<HTMLDivElement>(null);
   const task1Ref = useRef<HTMLImageElement>(null);
   const overlayRef = useRef<HTMLImageElement>(null);
@@ -20,18 +21,19 @@ function Projects() {
   const featuredProjectContainerRef = useRef<HTMLDivElement>(null);
   useGSAP(
     () => {
-      if (windowWidth > 1023) return;
+      if (windowWidth > 1023 || !projectSection) return;
       gsap.registerPlugin(ScrollTrigger);
-      gsap.from(featuredProjectContainerRef.current, {
+      gsap.from(projectSection, {
         scrollTrigger: {
-          trigger: featuredProjectContainerRef.current,
+          trigger: mobileRef.current,
           start: "center center",
-          end: "bottom top",
-          endTrigger: featuredProjectContainerRef.current,
+          end: "bottom bottom",
+          endTrigger: projectDescription.current,
           pin: true,
           scrub: true,
         },
       });
+
       gsap.from(overlayRef.current, {
         opacity: 0,
         scrollTrigger: {
@@ -76,11 +78,20 @@ function Projects() {
           scrub: true,
         },
       });
+      gsap.from(projectDescription.current, {
+        opacity: 0,
+        scrollTrigger: {
+          trigger: projectDescription.current,
+          start: "top 40%",
+          end: "bottom 30%",
+          endTrigger: projectDescription.current,
+        },
+      });
     },
 
     {
-      scope: mobileRef,
-      dependencies: [mobileRef],
+      scope: projectSection || undefined,
+      dependencies: [projectSection],
     }
   );
 
@@ -90,8 +101,14 @@ function Projects() {
       title="projects"
       className="bg-white relative section_projects py-32 text-bg-dark-blue z-50 min-h-screen"
     >
-      <div className="h-full w-full" ref={featuredProjectContainerRef}>
-        <div className="h-96 w-52 mx-auto relative" ref={mobileRefContainer}>
+      <div
+        className="h-full w-full px-6 flex flex-col gap-32 relative"
+        ref={featuredProjectContainerRef}
+      >
+        <span className="text-4xl font-semibold uppercase tracking-wider text-center ">
+          Kanban Board
+        </span>
+        <div className="h-96 w-52 mx-auto relative">
           <Screen isMobile={true} className="" mobileRef={mobileRef}>
             <>
               <div className="bg-[#F4F7FD] relative">
@@ -114,12 +131,27 @@ function Projects() {
               </div>
               <div
                 ref={taskOverviewImageRef}
-                className="absolute top-28 left-2 right-4 overflow-hidden shadow-md rounded-2xl z-50"
+                className="absolute top-28 left-0 right-4 overflow-hidden shadow-md rounded-md z-50"
               >
                 <img src={TaskOverview} alt="" className="h-full w-full " />
               </div>
             </>
           </Screen>
+        </div>
+        <div
+          className="flex flex-col gap-4 bg-white relative z-50 py-6"
+          ref={projectDescription}
+        >
+          <span className="text-xl font-semibold">
+            Fullstack web application for management built using React, Node,
+            Express and PostgresSQL.
+          </span>
+          <span className="text-xl font-semibold">
+            Authorised and authenticated user using browser cookies and JWT.
+          </span>
+          <span className="text-xl font-semibold">
+            Styled and responsive across devices using TailwindCSS.
+          </span>
         </div>
       </div>
     </Section>

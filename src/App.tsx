@@ -1,5 +1,5 @@
 import { Header, Main } from "./layout";
-import { Experience, Home, Projects } from "./sections";
+import { Home } from "./sections";
 
 function App() {
   return (
@@ -8,8 +8,6 @@ function App() {
       <Main>
         <>
           <Home />
-          <Projects />
-          <Experience />
         </>
       </Main>
     </div>

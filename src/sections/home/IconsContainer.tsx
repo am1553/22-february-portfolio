@@ -35,7 +35,6 @@ function IconsContainer() {
           end: "start center",
           pin: true,
           endTrigger: learningContainer,
-          markers: true,
         },
       });
     },

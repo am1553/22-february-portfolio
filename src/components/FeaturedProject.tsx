@@ -50,7 +50,7 @@ function FeaturedProject() {
        * */}
       <div className="absolute -top-1/4 left-1/2 lg:-top-40  lg:right-0">
         <Screen
-          className="w-[32rem] lg:h-[26rem] lg:w-[40rem] lg:skew-x-2 lg:-skew-y-12 shadow-lg"
+          className="w-[512px] lg:h-[26rem] lg:w-[40rem] lg:skew-x-2 lg:-skew-y-12 shadow-lg"
           isMobile={false}
         >
           <img src={KanbanDesktopImage} alt="" />

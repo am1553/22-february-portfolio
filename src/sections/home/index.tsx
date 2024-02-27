@@ -9,10 +9,10 @@ function Home() {
   return (
     <Section id="home" title="home">
       <>
-        <div className="w-full flex flex-col md:gap-48">
+        <div className="w-full flex flex-col md:gap-48 max-w-screen-2xl mx-auto">
           <Intro />
           <div
-            className="flex flex-col items-center justify-center lg:grid lg:grid-cols-2 lg:place-items-start lg:place-content-start lg:gap-x-6"
+            className="flex flex-col items-center justify-center lg:grid lg:grid-cols-2 lg:place-items-start lg:place-content-start lg:gap-x-6 max-lg:px-6"
             ref={contentRef}
             id="content"
           >

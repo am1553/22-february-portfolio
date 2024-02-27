@@ -3,7 +3,7 @@ import { Experience, Home, Projects } from "./sections";
 
 function App() {
   return (
-    <div className="min-h-screen h-full flex flex-col bg-bg-dark-blue text-white">
+    <div className="min-h-screen h-full flex flex-col bg-bg-dark-blue text-white  overflow-x-hidden">
       <Header />
       <Main>
         <>

@@ -7,7 +7,6 @@ function BackendOverview() {
 
   const contentContainer = document.getElementById("content")!;
   const backendIcons = document.querySelectorAll(".backend_overview_icon");
-  const frontendIcons = document.querySelectorAll(".frontend_overview_icon");
   const windowWidth = window.innerWidth;
 
   useGSAP(
@@ -15,20 +14,6 @@ function BackendOverview() {
       if (backendIcons.length < 1) return;
       if (windowWidth > 1023) return;
       gsap.registerPlugin(ScrollTrigger);
-      backendIcons.forEach((icon) => {
-        gsap.from(icon, {
-          opacity: 0,
-          scaleX: 0.5,
-          scaleY: 0.5,
-          scrollTrigger: {
-            trigger: backendContainer.current,
-            start: "top bottom",
-            end: "bottom bottom",
-            endTrigger: backendContainer.current,
-            scrub: true,
-          },
-        });
-      });
       backendIcons.forEach((icon) => {
         gsap.to(icon, {
           border: "2px solid #C471ED",
@@ -41,9 +26,11 @@ function BackendOverview() {
           },
         });
       });
-      frontendIcons.forEach((icon) => {
-        gsap.to(icon, {
-          border: "1px solid #ffffff50",
+      backendIcons.forEach((icon) => {
+        gsap.from(icon, {
+          opacity: 0,
+          scaleX: 0.5,
+          scaleY: 0.5,
           scrollTrigger: {
             trigger: backendContainer.current,
             start: "top bottom",
@@ -62,12 +49,23 @@ function BackendOverview() {
     () => {
       if (windowWidth < 1024) return;
       gsap.registerPlugin(ScrollTrigger);
-
+      backendIcons.forEach((icon) => {
+        gsap.to(icon, {
+          border: "4px solid #C471ED",
+          scrollTrigger: {
+            trigger: backendContainer.current,
+            start: "top bottom",
+            end: "bottom bottom",
+            endTrigger: backendContainer.current,
+            scrub: true,
+          },
+        });
+      });
       backendIcons.forEach((icon) => {
         gsap.from(icon, {
           opacity: 0,
-          scaleX: 0.5,
-          scaleY: 0.5,
+          scaleX: 0,
+          scaleY: 0,
           scrollTrigger: {
             trigger: backendContainer.current,
             start: "top 75%",
@@ -87,8 +85,10 @@ function BackendOverview() {
       id="backend-overview"
       ref={backendContainer}
     >
-      <span className="text-special uppercase opacity-50">backend</span>
-      <div className="text-2xl font-bold md:text-4xl lg:text-6xl">
+      <span className="text-special uppercase opacity-50 lg:text-specialXL">
+        backend
+      </span>
+      <div className="text-2xl font-bold md:text-4xl lg:text-6xl lg:leading-normal">
         <span className="opacity-70">Building</span>
         <span className="text-purple"> RESTful APIs </span>
         <span className="opacity-70">

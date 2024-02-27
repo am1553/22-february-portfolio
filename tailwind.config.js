@@ -10,6 +10,7 @@ export default {
         m: "16px",
         s: "12px",
         special: ["14px", { letterSpacing: "1em", fontWeight: 600 }],
+        specialXL: ["20px", { letterSpacing: "1em", fontWeight: 600 }],
       },
       colors: {
         "light-blue": "#12C2E9",

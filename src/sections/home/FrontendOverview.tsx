@@ -15,10 +15,8 @@ function FrontendOverview() {
       if (windowWidth > 1023) return;
       gsap.registerPlugin(ScrollTrigger);
       frontendIcons.forEach((icon) => {
-        gsap.from(icon, {
-          opacity: 0,
-          scaleX: 0.5,
-          scaleY: 0.5,
+        gsap.to(icon, {
+          border: "2px solid #12C2E9",
           scrollTrigger: {
             trigger: frontendContainer.current,
             start: "top bottom",
@@ -29,8 +27,10 @@ function FrontendOverview() {
         });
       });
       frontendIcons.forEach((icon) => {
-        gsap.to(icon, {
-          border: "2px solid #12C2E9",
+        gsap.from(icon, {
+          opacity: 0,
+          scaleX: 0,
+          scaleY: 0,
           scrollTrigger: {
             trigger: frontendContainer.current,
             start: "top bottom",
@@ -49,7 +49,18 @@ function FrontendOverview() {
     () => {
       if (windowWidth < 1024) return;
       gsap.registerPlugin(ScrollTrigger);
-
+      frontendIcons.forEach((icon) => {
+        gsap.to(icon, {
+          border: "4px solid #12C2E9",
+          scrollTrigger: {
+            trigger: frontendContainer.current,
+            start: "top bottom",
+            end: "bottom bottom",
+            endTrigger: frontendContainer.current,
+            scrub: true,
+          },
+        });
+      });
       frontendIcons.forEach((icon) => {
         gsap.from(icon, {
           opacity: 0,
@@ -74,8 +85,10 @@ function FrontendOverview() {
       id="frontend-overview"
       ref={frontendContainer}
     >
-      <span className="text-special uppercase opacity-50">frontend</span>
-      <div className="text-2xl font-bold md:text-4xl lg:text-6xl">
+      <span className="text-special uppercase opacity-50 lg:text-specialXL">
+        frontend
+      </span>
+      <div className="text-2xl font-bold md:text-4xl lg:text-6xl lg:leading-normal">
         <span className="opacity-70">Transforming designs into</span>
         <span className="text-light-blue"> pixel perfect </span>
         <span className="opacity-70">web application</span>

@@ -1,6 +1,6 @@
 import Screen from "./mocks/Screen";
 import KanbanboardMobileImage from "../assets/kanban.png";
-import KanbanDesktopImage from "../assets/kanban-desktop.png";
+// import KanbanDesktopImage from "../assets/kanban-desktop.png";
 import { KeyboardArrowDown } from "@mui/icons-material";
 
 function Content() {
@@ -48,14 +48,14 @@ function FeaturedProject() {
        * DESKTOP
        *
        * */}
-      <div className="absolute -top-1/4 left-1/2 lg:-top-40  lg:right-0">
+      {/* <div className="absolute -top-1/4 left-1/2 lg:-top-40  lg:right-0">
         <Screen
           className="w-[512px] lg:h-[26rem] lg:w-[40rem] lg:skew-x-2 lg:-skew-y-12 shadow-lg"
           isMobile={false}
         >
           <img src={KanbanDesktopImage} alt="" />
         </Screen>
-      </div>
+      </div> */}
     </div>
   );
 }

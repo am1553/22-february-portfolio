@@ -78,14 +78,16 @@ function Projects() {
           scrub: true,
         },
       });
-      gsap.from(projectDescription.current, {
-        opacity: 0,
+      gsap.to(projectDescription.current, {
+        translateY: 0,
         scrollTrigger: {
           trigger: projectDescription.current,
-          start: "top 40%",
-          end: "bottom 30%",
+          start: "top bottom",
+          end: "top 60%",
           endTrigger: projectDescription.current,
+          scrub: true,
         },
+        delay: 1000,
       });
     },
 
@@ -138,6 +140,7 @@ function Projects() {
             </>
           </Screen>
         </div>
+        <div className="h-36"></div>
         <div
           className="flex flex-col gap-4 bg-white relative z-50 py-6"
           ref={projectDescription}

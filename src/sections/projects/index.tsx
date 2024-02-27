@@ -71,10 +71,10 @@ function Projects() {
         scrollTrigger: {
           trigger: taskOverviewImageRef.current,
           start: "top 20%",
-          end: "bottom top",
+          end: "bottom 40%",
           endTrigger: mobileRef.current,
+          scrub: true,
         },
-        reversed: true,
       });
     },
 
@@ -93,31 +93,33 @@ function Projects() {
       <div className="h-full w-full" ref={featuredProjectContainerRef}>
         <div className="h-96 w-52 mx-auto relative" ref={mobileRefContainer}>
           <Screen isMobile={true} className="" mobileRef={mobileRef}>
-            <div className="bg-[#F4F7FD] relative">
-              <img src={KanbanMobileHeader} alt="" />
-              <img
-                src={KanbanBoardColumns}
-                alt=""
-                className="w-full mt-2 ml-2"
-              />
-              <img
-                src={KanbanTask1}
-                alt=""
-                className="absolute left-2 top-14 w-36 rounded-md z-50"
-                ref={task1Ref}
-              />
+            <>
+              <div className="bg-[#F4F7FD] relative">
+                <img src={KanbanMobileHeader} alt="" />
+                <img
+                  src={KanbanBoardColumns}
+                  alt=""
+                  className="w-full mt-2 ml-2"
+                />
+                <img
+                  src={KanbanTask1}
+                  alt=""
+                  className="absolute left-2 top-14 w-36 rounded-md z-50"
+                  ref={task1Ref}
+                />
+                <div
+                  className="bg-black opacity-30 absolute z-40 -left-4 -right-4 -top-4 -bottom-4 blur-lg"
+                  ref={overlayRef}
+                ></div>
+              </div>
               <div
-                className="bg-black opacity-30 absolute z-40 -left-4 -right-4 -top-4 -bottom-4 blur-lg"
-                ref={overlayRef}
-              ></div>
-            </div>
+                ref={taskOverviewImageRef}
+                className="absolute top-28 left-2 right-4 overflow-hidden shadow-md rounded-2xl z-50"
+              >
+                <img src={TaskOverview} alt="" className="h-full w-full " />
+              </div>
+            </>
           </Screen>
-          <div
-            ref={taskOverviewImageRef}
-            className="absolute top-20 -left-10 overflow-hidden shadow-md rounded-2xl"
-          >
-            <img src={TaskOverview} alt="" className="h-full w-full " />
-          </div>
         </div>
       </div>
     </Section>

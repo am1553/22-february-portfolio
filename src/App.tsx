@@ -1,5 +1,5 @@
 import { Header, Main } from "./layout";
-import { Home } from "./sections";
+import { Home, Projects } from "./sections";
 
 function App() {
   return (
@@ -8,6 +8,7 @@ function App() {
       <Main>
         <>
           <Home />
+          <Projects />
         </>
       </Main>
     </div>

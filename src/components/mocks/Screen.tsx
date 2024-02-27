@@ -1,4 +1,4 @@
-function MobileScreen({
+function Screen({
   className,
   children,
   isMobile,
@@ -29,4 +29,4 @@ function MobileScreen({
   );
 }
 
-export default MobileScreen;
+export default Screen;

@@ -13,7 +13,7 @@ function Screen({
 }) {
   return (
     <div
-      className={`h-full w-full bg-[#222634] rounded-[2rem] p-1 shadow-inner relative ${className}`}
+      className={`h-full w-full bg-[#222634] rounded-[2rem] p-1 shadow-[2px_4px_8px_#00000050] relative ${className}`}
       ref={mobileRef}
     >
       {isMobile && (

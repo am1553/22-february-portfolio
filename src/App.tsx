@@ -1,4 +1,5 @@
-import { Header, Main } from "./layout";
+import { Header, Main, Footer } from "./layout";
+
 import { Experience, Home, Projects } from "./sections";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
           <Experience />
         </>
       </Main>
+      <Footer />
     </div>
   );
 }

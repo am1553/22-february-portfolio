@@ -246,17 +246,10 @@ function Projects() {
               </div>
               <div className="flex flex-col gap-4">
                 <span className=" font-regular text-xl">Tech Stack</span>
-                <span className="lg:hidden opacity-70 text-l">
+                <span className="opacity-70 text-l">
                   React.js &#x2022; Express.js &#x2022; Node.js &#x2022;
                   TypeScript &#x2022; PostgresSQL
                 </span>
-                <ul className="max-lg:hidden opacity-70 text-l">
-                  <li>React.js</li>
-                  <li>Express.js</li>
-                  <li>Node.js</li>
-                  <li>TypeScript</li>
-                  <li>PostgresSQL</li>
-                </ul>
               </div>
 
               <div className="flex flex-col gap-4 ">
@@ -274,12 +267,20 @@ function Projects() {
               </div>
 
               <div className="flex gap-6 mx-auto w-full lg:col-span-3 max-w-96 text-l">
-                <button className="w-full border py-1 rounded-full">
+                <a
+                  className="w-full border py-1 rounded-full text-center"
+                  href="https://kanban-react-app.onrender.com"
+                  target="_blank"
+                >
                   Live
-                </button>
-                <button className="w-full border py-1 rounded-full">
+                </a>
+                <a
+                  className="w-full border py-1 rounded-full text-center"
+                  href="https://github.com/am1553/kanban-client"
+                  target="_blank"
+                >
                   Github
-                </button>
+                </a>
               </div>
             </div>
           </div>

@@ -16,6 +16,8 @@ const PROJECT_IMAGES: {
   mobileimg: string;
   desktopImg: string;
   tech: string[];
+  live: string;
+  repo: string;
 }[] = [
   {
     title: "Audiophile E-commerce",
@@ -24,6 +26,8 @@ const PROJECT_IMAGES: {
     mobileimg: AudiophileImageMobile,
     desktopImg: AudiophileImageLaptop,
     tech: ["TypeScript", "React.js", "Redux", "TailwindCSS"],
+    live: "https://am1553.github.io/audiophile/",
+    repo: "https://github.com/am1553/audiophile",
   },
   {
     title: "Invoice Web App",
@@ -32,6 +36,8 @@ const PROJECT_IMAGES: {
     mobileimg: InvoiceImageMobile,
     desktopImg: InvoiceImageLaptop,
     tech: ["React.js", "TailwindCSS", "Firebase"],
+    live: "https://am1553.github.io/invoice-app/",
+    repo: "https://github.com/am1553/invoice-app",
   },
   {
     title: "Entertainment Web App",
@@ -40,6 +46,8 @@ const PROJECT_IMAGES: {
     mobileimg: EntertainmentImageMobile,
     desktopImg: EntertainmentImageLaptop,
     tech: ["React.js", "SCSS"],
+    live: "https://am1553.github.io/entertainment-web-app/",
+    repo: "https://github.com/am1553/entertainment-web-app",
   },
   {
     title: "PhotoSnap Art Gallery",
@@ -48,6 +56,8 @@ const PROJECT_IMAGES: {
     mobileimg: PhotosnapImageMobile,
     desktopImg: PhotosnapImageLaptop,
     tech: ["React.js", "GSAP", "SCSS"],
+    live: "https://am1553.github.io/photosnap/",
+    repo: "https://github.com/am1553/photosnap",
   },
 ];
 
@@ -56,14 +66,14 @@ function MoreProjects() {
     <Section
       id="more-projects"
       title="more projects"
-      className="py-32 max-w-screen-2xl"
+      className="max-w-screen-2xl py-36"
     >
-      <div className="px-6">
-        <span className="text-special lg:text-specialXL opacity-70 uppercase">
+      <div className="px-6  text-center">
+        <span className="text-special lg:text-specialXL opacity-70 uppercase mx-auto ">
           more projects
         </span>
 
-        <div className="flex flex-col gap-32 lg:grid lg:grid-cols-2">
+        <div className="flex flex-col gap-32 lg:grid lg:grid-cols-2 text-left">
           {PROJECT_IMAGES.map((project, i) => {
             return (
               <div className="w-full flex flex-col gap-6 h-full" key={i}>
@@ -80,21 +90,31 @@ function MoreProjects() {
                 <p className="text-l opacity-70 flex-1">
                   {project.description}
                 </p>
-                <ul className="flex gap-4 flex-wrap">
-                  {project.tech.map((item, j) => (
-                    <li key={j} className="border px-4 rounded-md py-1 text-sm">
-                      {item}
-                    </li>
-                  ))}
+                <ul className="flex gap-4 flex-wrap text-sm lg:text-l opacity-70">
+                  {project.tech.map((item, j) =>
+                    j < 1 ? (
+                      <li key={j}>{item}</li>
+                    ) : (
+                      <li key={j}>&#x2022; {item}</li>
+                    )
+                  )}
                 </ul>
 
                 <div className="flex w-full justify-start my-2 gap-6">
-                  <button className="border px-6 py-1 rounded-full">
+                  <a
+                    className="border px-12 py-1 rounded-full text-center"
+                    href={project.live}
+                    target="_blank"
+                  >
                     Live
-                  </button>
-                  <button className="border px-6 py-1 rounded-full">
+                  </a>
+                  <a
+                    className="border px-12 py-1 rounded-full text-center"
+                    href={project.repo}
+                    target="_blank"
+                  >
                     Github
-                  </button>
+                  </a>
                 </div>
               </div>
             );

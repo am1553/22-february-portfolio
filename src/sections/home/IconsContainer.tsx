@@ -31,10 +31,11 @@ function IconsContainer() {
       gsap.from(iconsContainer.current, {
         scrollTrigger: {
           trigger: iconsContainer.current,
-          start: "top top",
+          start: "top 64px",
           end: "start center",
           pin: true,
           endTrigger: learningContainer,
+          markers: true,
         },
       });
     },

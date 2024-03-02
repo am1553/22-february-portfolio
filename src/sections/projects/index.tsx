@@ -6,11 +6,11 @@ import KanbanDesktop from "../../assets/kanban-desktop.png";
 import TaskOverview from "../../assets/kanban-board/task-overview.svg";
 import KanbanTaskOverview from "../../assets/kanban-taskoverview.png";
 import { Section } from "../../layout";
-
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useRef } from "react";
+import MoreProjects from "./MoreProjects";
 
 function Projects() {
   const projectSection = document.getElementById("projects");
@@ -31,8 +31,8 @@ function Projects() {
       gsap.from(projectSection, {
         scrollTrigger: {
           trigger: desktopRef.current,
-          start: "top top",
-          end: "bottom top",
+          start: "center center",
+          end: "top center",
           endTrigger: experienceSection,
           pin: true,
           scrub: true,
@@ -146,138 +146,148 @@ function Projects() {
   );
 
   return (
-    <Section
-      id="projects"
-      title="projects"
-      className="bg-[#062026] relative section_projects py-32 text-white z-50 min-h-screen w-screen"
-    >
-      <>
-        <div
-          className="h-full w-full px-6 flex flex-col gap-32 relative mx-auto my-64 max-w-screen-2xl"
-          ref={featuredProjectContainerRef}
-        >
-          <span className="uppercase tracking-wider text-center lg:row-start-1 text-2xl font-bold md:text-4xl lg:text-6xl lg:leading-normal opacity-70">
-            Kanban Board
-          </span>
-          <div className="relative w-full">
-            {/**
-             * DESKTOP SCREEN
-             */}
-            <div
-              className="max-lg:hidden max-w-screen-2xl w-full mx-auto h-[56rem]"
-              ref={desktopRef}
-            >
-              <Screen isMobile={false} className="shadow-md ">
-                <>
-                  <div className="bg-[#F4F7FD] relative h-full w-full">
-                    <img src={KanbanDesktop} alt="" className="w-full h-fit" />
-                  </div>
-                  <div className="" ref={desktopTaskOverviewRef}>
-                    <div className="absolute left-0 right-0 top-0 bottom-0 bg-black bg-opacity-30"></div>
-                    <img
-                      src={KanbanTaskOverview}
-                      alt=""
-                      className="z-50 absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 h-96 rounded-md"
-                    />
-                  </div>
-                </>
-              </Screen>
-            </div>
-
-            {/**
-             * MOBILE SCREEN
-             */}
-            <div className="h-96 w-52 lg:h-[36rem] lg:w-72 mx-auto relative lg:absolute lg:top-0 lg:right-0 lg:hidden">
-              <Screen
-                isMobile={true}
-                className="shadow-md"
-                mobileRef={mobileRef}
-              >
-                <>
-                  <div className="bg-[#F4F7FD] relative">
-                    <img src={KanbanMobileHeader} alt="" />
-                    <img
-                      src={KanbanBoardColumns}
-                      alt=""
-                      className="w-full mt-2 ml-2"
-                    />
-                    <img
-                      src={KanbanTask1}
-                      alt=""
-                      className="absolute left-2 top-14 w-36 rounded-md z-50"
-                      ref={task1Ref}
-                    />
-                    <div
-                      className="bg-black opacity-30 absolute z-40 -left-4 -right-4 -top-4 -bottom-4 blur-lg"
-                      ref={overlayRef}
-                    ></div>
-                  </div>
-                  <div
-                    ref={taskOverviewImageRef}
-                    className="absolute top-28 left-0 right-4 overflow-hidden shadow-md rounded-md z-50"
-                  >
-                    <img src={TaskOverview} alt="" className="h-full w-full " />
-                  </div>
-                </>
-              </Screen>
-            </div>
-          </div>
-          <div className="p-36 lg:hidden"></div>
+    <>
+      <Section
+        id="projects"
+        title="projects"
+        className="bg-white relative section_projects text-bg-dark-blue z-50 w-screen"
+      >
+        <>
           <div
-            className="flex flex-col gap-8 relative z-50 lg:grid lg:gap-y-24 lg:grid-cols-3 before:absolute before:top-0 before:left-1/2 before:-translate-x-1/2 before:h-2 before:w-screen before:rounded-t-full before:bg-gradient-to-r before:from-light-blue before:via-purple before:to-red bg-[#062026] py-12"
-            ref={projectDescription}
+            className="h-full w-full px-6 flex flex-col gap-32 relative mx-auto pt-32 max-w-screen-2xl"
+            ref={featuredProjectContainerRef}
           >
-            <div className="flex flex-col gap-4">
-              <span className="text-l font-regular lg:text-4xl">
-                Description
-              </span>
-              <p className="opacity-70">
-                A fullstack web application used to manage work visually,
-                depicting stages of a process with cards, applicable at personal
-                or organizational levels.
-              </p>
-            </div>
-            <div className="flex flex-col gap-4">
-              <span className="text-l font-regular lg:text-4xl">
-                Tech Stack
-              </span>
-              <span className="lg:hidden opacity-70">
-                React.js &#x2022; Express.js &#x2022; Node.js &#x2022;
-                TypeScript &#x2022; PostgresSQL
-              </span>
-              <ul className="max-lg:hidden opacity-70">
-                <li>React.js</li>
-                <li>Express.js</li>
-                <li>Node.js</li>
-                <li>TypeScript</li>
-                <li>PostgresSQL</li>
-              </ul>
-            </div>
+            <span className="uppercase tracking-wider text-center lg:row-start-1 text-2xl font-bold md:text-4xl lg:text-6xl lg:leading-normal opacity-70">
+              Kanban Board
+            </span>
+            <div className="relative w-full">
+              {/**
+               * DESKTOP SCREEN
+               */}
+              <div
+                className="max-lg:hidden max-w-screen-2xl w-full mx-auto h-[56rem]"
+                ref={desktopRef}
+              >
+                <Screen isMobile={false} className="shadow-md ">
+                  <>
+                    <div className="bg-[#F4F7FD] relative h-full w-full">
+                      <img
+                        src={KanbanDesktop}
+                        alt=""
+                        className="w-full h-fit"
+                      />
+                    </div>
+                    <div className="" ref={desktopTaskOverviewRef}>
+                      <div className="absolute left-0 right-0 top-0 bottom-0 bg-black bg-opacity-30"></div>
+                      <img
+                        src={KanbanTaskOverview}
+                        alt=""
+                        className="z-50 absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 h-96 rounded-md"
+                      />
+                    </div>
+                  </>
+                </Screen>
+              </div>
 
-            <div className="flex flex-col gap-4 ">
-              <span className="text-l font-regular lg:text-4xl">Features</span>
-              <ul className="flex-col flex opacity-70 gap-2">
-                <li>CRUD functionality connected with PostgresSQL database.</li>
-                <li>
-                  Authorization and authentication done using browser cookies
-                  and JWT.
-                </li>
-                <li>Responsive across all devices.</li>
-              </ul>
+              {/**
+               * MOBILE SCREEN
+               */}
+              <div className="h-96 w-52 lg:h-[36rem] lg:w-72 mx-auto relative lg:absolute lg:top-0 lg:right-0 lg:hidden">
+                <Screen
+                  isMobile={true}
+                  className="shadow-md"
+                  mobileRef={mobileRef}
+                >
+                  <>
+                    <div className="bg-[#F4F7FD] relative">
+                      <img src={KanbanMobileHeader} alt="" />
+                      <img
+                        src={KanbanBoardColumns}
+                        alt=""
+                        className="w-full mt-2 ml-2"
+                      />
+                      <img
+                        src={KanbanTask1}
+                        alt=""
+                        className="absolute left-2 top-14 w-36 rounded-md z-50"
+                        ref={task1Ref}
+                      />
+                      <div
+                        className="bg-black opacity-30 absolute z-40 -left-4 -right-4 -top-4 -bottom-4 blur-lg"
+                        ref={overlayRef}
+                      ></div>
+                    </div>
+                    <div
+                      ref={taskOverviewImageRef}
+                      className="absolute top-28 left-0 right-4 overflow-hidden shadow-md rounded-md z-50"
+                    >
+                      <img
+                        src={TaskOverview}
+                        alt=""
+                        className="h-full w-full "
+                      />
+                    </div>
+                  </>
+                </Screen>
+              </div>
             </div>
+            <div className="p-36 lg:hidden"></div>
+            <div
+              className="flex flex-col gap-8 relative z-50 lg:grid lg:gap-y-24 lg:grid-cols-3 before:absolute before:top-0 before:left-1/2 before:-translate-x-1/2 before:h-2 before:w-screen before:max-lg:rounded-t-full before:bg-gradient-to-r before:from-light-blue before:via-purple before:to-red bg-white py-12 text-bg-dark-blue"
+              ref={projectDescription}
+            >
+              <div className="flex flex-col gap-4">
+                <span className="font-regular text-xl">Description</span>
+                <p className="opacity-70 text-l">
+                  A fullstack web application used to manage work visually,
+                  depicting stages of a process with cards, applicable at
+                  personal or organizational levels.
+                </p>
+              </div>
+              <div className="flex flex-col gap-4">
+                <span className=" font-regular text-xl">Tech Stack</span>
+                <span className="lg:hidden opacity-70 text-l">
+                  React.js &#x2022; Express.js &#x2022; Node.js &#x2022;
+                  TypeScript &#x2022; PostgresSQL
+                </span>
+                <ul className="max-lg:hidden opacity-70 text-l">
+                  <li>React.js</li>
+                  <li>Express.js</li>
+                  <li>Node.js</li>
+                  <li>TypeScript</li>
+                  <li>PostgresSQL</li>
+                </ul>
+              </div>
 
-            <div className="flex gap-6 mx-auto w-full lg:col-span-3 max-w-96">
-              <button className="w-full border py-1 rounded-full">Live</button>
-              <button className="w-full border py-1 rounded-full">
-                Github
-              </button>
+              <div className="flex flex-col gap-4 ">
+                <span className=" font-regular text-xl">Features</span>
+                <ul className="flex-col flex opacity-70 gap-2 text-l">
+                  <li>
+                    CRUD functionality connected with PostgresSQL database.
+                  </li>
+                  <li>
+                    Authorization and authentication done using browser cookies
+                    and JWT.
+                  </li>
+                  <li>Responsive across all devices.</li>
+                </ul>
+              </div>
+
+              <div className="flex gap-6 mx-auto w-full lg:col-span-3 max-w-96 text-l">
+                <button className="w-full border py-1 rounded-full">
+                  Live
+                </button>
+                <button className="w-full border py-1 rounded-full">
+                  Github
+                </button>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className=""></div>
-      </>
-    </Section>
+          <MoreProjects />
+        </>
+      </Section>
+    </>
   );
 }
 

@@ -36,7 +36,7 @@ function Header() {
     setIsMenu(false);
   };
   return (
-    <header className="h-16 lg:h-24 w-full px-4 lg:px-20 after:absolute after:h-2 after:w-full after:bg-gradient-to-r after:from-light-blue after:via-purple after:to-red after:left-0">
+    <header className="h-16 lg:h-24 w-full px-4 lg:px-20 after:absolute after:h-2 after:w-full after:bg-gradient-to-r after:from-light-blue after:via-purple after:to-red after:left-0 fixed bg-black z-[100]">
       <div className="flex items-center justify-center h-full w-full max-w-screen-2xl mx-auto">
         <div className="flex items-center justify-center gap-4 lg:gap-12">
           <a href="">

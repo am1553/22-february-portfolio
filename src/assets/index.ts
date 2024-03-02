@@ -1,8 +1,4 @@
-import AudiophileImage from "./audiophile.png";
-import EntertainmentImage from "./entertainment.png";
-import InvoiceImage from "./invoice.png";
 import KanbanImage from "./kanban.png";
-import PhotosnapImage from "./photosnap.png";
 import HTMLIcon from "./html-icon.svg";
 import ExpressIcon from "./express-icon.svg";
 import TypeScriptIcon from "./typescript-icon.svg";
@@ -15,12 +11,25 @@ import JavaIcon from "./java-icon.svg";
 import PostgresSQLIcon from "./postgressql-icon.svg";
 import MongoDBIcon from "./mongodb-icon.svg";
 import ReactIcon from "./react-icon.svg";
+
+import AudiophileImageMobile from "./audiophile-iphone.png";
+import AudiophileImageLaptop from "./audiophile-laptop.png";
+import EntertainmentImageMobile from "./entertainment-iphone.png";
+import EntertainmentImageLaptop from "./entertainment-laptop.png";
+import InvoiceImageMobile from "./invoice-iphone.png";
+import InvoiceImageLaptop from "./invoice-app-laptop.png";
+import PhotosnapImageMobile from "./art-gallery-iphone.png";
+import PhotosnapImageLaptop from "./art-gallery-laptop.png";
 export {
-  AudiophileImage,
-  EntertainmentImage,
-  InvoiceImage,
+  AudiophileImageMobile,
+  AudiophileImageLaptop,
+  EntertainmentImageMobile,
+  EntertainmentImageLaptop,
+  InvoiceImageMobile,
+  InvoiceImageLaptop,
   KanbanImage,
-  PhotosnapImage,
+  PhotosnapImageMobile,
+  PhotosnapImageLaptop,
   HTMLIcon,
   ExpressIcon,
   TypeScriptIcon,

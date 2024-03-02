@@ -62,7 +62,7 @@ function Header() {
         </nav>
         {isMenu ? (
           <div
-            className="bg-white absolute inset-0 top-16 h-fit z-10 p-4 lg:hidden"
+            className="bg-black absolute inset-0 top-16 h-fit z-10 p-4 lg:hidden"
             ref={navPanelRef}
           >
             <nav className="flex flex-col">

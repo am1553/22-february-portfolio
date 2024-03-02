@@ -21,7 +21,7 @@ function Content() {
         </p>
       </div>
       <div className="rounded-md py-2 flex w-48 items-center justify-between uppercase">
-        <span>Jump to Project</span>
+        <a href="#projects">Jump to Project</a>
         <KeyboardArrowDown />
       </div>
     </div>
